@@ -185,6 +185,7 @@ app.use('/ext/getlasttxsajax/:min', function(req,res){
     req.params.min  = (req.params.min * 100000000);
   }
   db.get_last_txs_ajax(req.query.start, req.query.length, req.params.min,function(txs, count){
+    /*
     var data = [];
     for(i=0; i<txs.length; i++){
       var row = [];
@@ -197,6 +198,8 @@ app.use('/ext/getlasttxsajax/:min', function(req,res){
       data.push(row);
     }
     res.json({"data":data, "draw": req.query.draw, "recordsTotal": count, "recordsFiltered": count});
+    */
+    res.json({"data":txs, "draw": req.query.draw, "recordsTotal": count, "recordsFiltered": count});
   });
 });
 
