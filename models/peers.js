@@ -8,7 +8,11 @@ var PeersSchema = new Schema({
   protocol: { type: String, default: "" },
   version: { type: String, default: "" },
   country: { type: String, default: "" },
-  country_code: { type: String, default: "" }
+  country_code: { type: String, default: "" },
+  region: { type: String, default: "" },
+  region_code: { type: String, default: "" },
+  city: { type: String, default: "" },
+  zip_code: { type: String, default: "" }
 });
 
 module.exports = mongoose.model('Peers', PeersSchema);
